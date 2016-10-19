@@ -3,6 +3,9 @@ Recipes = new Mongo.Collection ('recipes'); //must be low caps "recipes"
 Recipes.allow ({
   insert(userId, doc) {
     return !!userId;
+  },
+  update(userId, doc) {
+    return !!userId;
   }
 });
 Ingredient = new SimpleSchema ({
@@ -56,6 +59,19 @@ RecipeSchema = new SimpleSchema ({
       }
     }
 });
+//methods can be called in js Meteor.call
+Meteor.methods ({
+  toggleMenuItem(id, currentState){
+    Recipes.update(id, {
+      $set: {
+        inMenu: !currentState //changes in menu from current value to opposite
+      }
+    });
+  },
+  deleteRecipe(id) {
+    Recipes.remove(id);
+  }
 
+});
 
 Recipes.attachSchema(RecipeSchema);
