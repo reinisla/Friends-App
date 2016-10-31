@@ -92,14 +92,15 @@ header
         margin 0
         font-size 1.6em
         float left
-    .login-buttons-dropdown-align-
+    .login-buttons-dropdown-align, .logout
         float right
-        a
+        &:hover
+          cursor pointer
+        h1
             color #FFF
             text-decoration none
-
-p
-    color #333
+        p
+            color #333
 
 .page-title
     text-transform uppercase
@@ -107,14 +108,13 @@ p
     margin-bottom 30px
 
 .billboard
-    background dark-purp
-    color #FFF
-    font-size 2em
-    text-align center
-    padding 60px
-    h2
-        margin 0
+    background white
+    color #000
+    font-size 1.3em
 
+    .login-box
+      width 40%
+      padding 60px
 .main-layout
     lost-center 90%
     margin-top 20px
@@ -394,3 +394,51 @@ input, select, textarea
         left auto
         a
             color dark-purp
+.users
+  .close-edit-mode
+    position absolute
+    top 0
+    right 0
+    padding 10px
+    font-size 1.2em
+    font-weight 900
+    text-transform uppercase
+    cursor pointer
+  .user-edit
+    position absolute
+    left -300px
+    top 0
+    background #fff
+    shadow-level(2)
+    z-index 10
+    padding 20px
+    width 280px
+    opacity 0
+    transition all 0.4s cubic-bezier(0.68, -0.65, 0.265, 1.20)
+    @include card(2)
+    text-align center
+    h3
+      float left
+  table
+    width 100%
+    position relative
+    transition all 0.4s cubic-bezier(0.68, -0.65, 0.265, 1.20)
+    @include card(2)
+    tr:nth-child(even)
+      background #f5f5f5
+    &.edit-mode
+      transform translate3d(300px, 0, 0)
+    .edit-mode, .user-edit
+      opacity 1
+    th, td
+      text-align left
+      padding 10px
+      border 1px solid black
+      border-collapse collapse
+      text-align left
+    th
+      background purp
+      color white
+    .user_id
+      color blue
+      cursor pointer

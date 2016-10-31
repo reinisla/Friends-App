@@ -1,11 +1,26 @@
 {
-  "name": "CookingApp",
+  "name": "friends",
   "private": true,
   "scripts": {
     "start": "meteor run"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
-    "meteor-node-stubs": "~0.2.0"
-  }
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.15.2"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reinisla/Meteor-intermediate-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reinisla/Meteor-intermediate-project/issues"
+  },
+  "homepage": "https://github.com/reinisla/Meteor-intermediate-project#readme",
+  "description": ""
 }

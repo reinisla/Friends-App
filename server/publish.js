@@ -10,3 +10,14 @@ Meteor.publish ('singleRecipe', function(id){
       _id: id // subscribes only for one recipe
   });
 });
+
+Meteor.publish ('allUsers', function(){
+  if(Roles.userIsInRole(this.userId, 'admin')){
+    return Meteor.users.find({});
+  }
+})
+Meteor.publish('friendlist', function() {
+  return FriendList.find({
+    friendOf : this.userId
+  });
+});

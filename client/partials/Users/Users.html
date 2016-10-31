@@ -1,0 +1,50 @@
+<template name="Users">
+  {{#if isInRole 'admin'}}
+    <div class="users">
+      <h1>Users</h1>
+
+      <table class="{{editMode}}">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Created At</th>
+          <th>Role</th>
+          <th>Edit</th>
+        </tr>
+        {{#each users}}
+          <tr>
+            <td class="user_id">{{_id}}</td>
+            <td >{{profile.firstName}}</td>
+            <td >{{profile.lastName}}</td>
+            <td>{{userEmail}}</td>
+            <td>{{dateFormat}}</td>
+            <td>{{isAdmin}}
+              {{#if currentEdit}}
+                <div class="user-edit">
+                  <i class="fa fa-close close-login close-edit-mode"></i>
+                  <h3>Editing user:</h3>
+                  <h3>{{profile.firstName}} {{profile.lastName}}</h3>
+                  {{#if isAdmin}}
+                    <button class="toggle-admin">Remove Admin</button>
+                  {{else}}
+                    <button class="toggle-admin">Make Admin</button>
+                  {{/if}}
+                </div>
+              {{/if}}
+            </td>
+            <td>
+              {{#if isFriend}}
+              <button class="insert-button">Remove</button>
+              {{else}}
+              <button class="insert-button">Add</button>
+              {{/if}}
+            </td>
+          </tr>
+        {{/each}}
+      </table>
+    </div>
+  {{else}}
+  {{/if}}
+</template>

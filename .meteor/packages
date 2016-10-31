@@ -28,7 +28,7 @@ fastclick
 raix:handlebar-helpers
 aldeed:collection2
 aldeed:autoform
-accounts-ui
+useraccounts:unstyled
 accounts-password
 matb33:bootstrap-glyphicons
 msavin:jetsetter
@@ -36,5 +36,6 @@ zimme:active-route
 gwendall:auth-client-callbacks
 meteortoys:allthings
 datariot:ganalytics
-
+aldeed:template-extension #customize templates by overriding them
+alanning:roles #user roles
 check

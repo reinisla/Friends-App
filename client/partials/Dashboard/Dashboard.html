@@ -1,0 +1,7 @@
+<template name="Dashboard">
+  {{#if isInRole 'admin'}}
+    <h1>Hello</h1>
+  {{else}}
+    <h1>Not authorized</h1>
+  {{/if}}
+</template>
